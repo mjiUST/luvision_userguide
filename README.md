@@ -55,20 +55,24 @@
     - `qinfo`:  
 
 ![](figure/qinfo.png)
+
 * How to submit jobs:
     - The queue uses bash scripts that are organized in blocks. A block is a part of the script that forms an independent job and can be specified as follows, in the file `qsub_example.sh`:
 
 ![](figure/qsub1.png)
 
 ![](figure/qsub2.png)
+
     - `qsub_example.sh` to submit the jobs. Each task’s printout will be stored in the `./q.log` folder.
 * How to check the status of the queued jobs:
     - `qstat`: check the current status of queued jobs on this machine. The output for the previous submitted job in the FIRST 5 seconds. **Note** that the anyName_gpuJob was in the `h: hold` status and there was no gpu occupied in the first 5 seconds. 
 
 ![](figure/qstat1.png)
+
     - the status in the last 5 seconds:
 
 ![](figure/qstat2.png)
+
 * Check the log files
     - the name of the log files follow the `jobname`+`id`:
 
@@ -77,6 +81,7 @@
 ![](figure/log2.png)
 
 ![](figure/log3.png)
+
 * Have fun!
  
  

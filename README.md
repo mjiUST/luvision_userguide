@@ -3,13 +3,12 @@
 * [contribute]: If you want to open an account or to add more information to this doc, please contact Mengqi or directly pull a request. 
 
 ## content
-* [Server and Fileserver](#sec1), read before using the servers. 
+* [Server and Fileserver](#Servers-and-fileserver), read before using the servers. 
 * [Scheduling Tool](), read before running any code on the server.  
-* [清华报销](#sec3)
+* [Reimbursement in TBSI](#Reimbursement-in-TBSI), 清华报销
 
 ## Servers and fileserver
-<a name="sec1"></a>
- 
+
 * Keep in mind: 
     - nerver use luvision account to run code on the server. Please use your own account and the queuing tool to submit jobs. Otherwise, you may terminate someones’ running jobs. 
     - luvision account is the only superuser, and can only be used to install publicly used libraries, which may has different versions, such as cuda 7.0/8.0/…. Specify the version you want use in your local account `.bashrc` / `.theanorc` / … So that evryone’s setting will not affect others’. 
@@ -36,5 +35,6 @@
 * [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
  
  
-## 清华报销
+## Reimbursement in TBSI
+
 <a name="sec3"></a>

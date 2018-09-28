@@ -50,24 +50,32 @@
     - we use it to schedule our jobs on the jointly used computers.
     - Jobs are scheduled according to a priority queue. The priority of a job is small if the amount of requested resources/computation time is large. Priority of a job increases with its waiting time. 
     - For the latest version and professional usage, please check the author’s [github](https://github.com/alexanderrichard/queueing-tool).
-    - Check the samples in `<this_git_repo>/code/queuing_samples`
+    - Check the samples in [<this_git_repo>/code/queuing_samples](https://bitbucket.org/mjiUST/luvision_userguide/src/master/code/queuing_samples/)
 * Check the **available** resources:
     - `qinfo`:  
+
 ![](figure/qinfo.png)
 * How to submit jobs:
     - The queue uses bash scripts that are organized in blocks. A block is a part of the script that forms an independent job and can be specified as follows, in the file `qsub_example.sh`:
+
 ![](figure/qsub1.png)
+
 ![](figure/qsub2.png)
     - `qsub_example.sh` to submit the jobs. Each task’s printout will be stored in the `./q.log` folder.
 * How to check the status of the queued jobs:
     - `qstat`: check the current status of queued jobs on this machine. The output for the previous submitted job in the FIRST 5 seconds. **Note** that the anyName_gpuJob was in the `h: hold` status and there was no gpu occupied in the first 5 seconds. 
+
 ![](figure/qstat1.png)
     - the status in the last 5 seconds:
+
 ![](figure/qstat2.png)
 * Check the log files
     - the name of the log files follow the `jobname`+`id`:
+
 ![](figure/log1.png)
+
 ![](figure/log2.png)
+
 ![](figure/log3.png)
 * Have fun!
  
@@ -91,8 +99,8 @@
 
 
 * 实验器材／办公用具发票：
-    - 抬头：清华大学深圳研究生院
-    - 纳税人识别号：12440300455752807L
+    - 抬头：清华大学深圳研究生院  (recheck with **Xiongfei**!!!)
+    - 纳税人识别号：12440300455752807L  (recheck with **Xiongfei**!!!)
     - 需有购物清单
     - 电子发票打印亦可
     - 外币购买：需列出转换成人民币的汇率和金额 

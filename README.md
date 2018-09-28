@@ -3,11 +3,12 @@
 * [contribute]: If you want to open an account or to add more information to this doc, please contact Mengqi or directly pull a request. 
 
 ## content
-* [Server and Fileserver](#Servers-and-fileserver), read before using the servers. 
+* [Server and Fileserver](#sec1), read before using the servers. 
 * [Scheduling Tool](), read before running any code on the server.  
-* 清华报销[]
+* [清华报销](#sec3)
 
 ## Servers and fileserver
+<a name="sec1"></a>
  
 * Keep in mind: 
     - nerver use luvision account to run code on the server. Please use your own account and the queuing tool to submit jobs. Otherwise, you may terminate someones’ running jobs. 
@@ -25,13 +26,15 @@
     - Currently, only the home folder on the servers are mounted from the fileserver. So that your own home folder is large enough to do anything you want. The ownership of the files is related to the  
 
 * `apt-get` without sudo 
-    - apt-get download tmux # get the .deb file 
-    - ar x tmux*.deb # extract the contents 
-    - tar xvzf data.tar.gz # the file data.tar.gz has all the stuff which you need for executing the software 
-    - ./usr/bin/tmux # ./usr folder can be moved to other directory for convinience 
+    - `apt-get download tmux` # get the .deb file 
+    - `ar x tmux*.deb` # extract the contents 
+    - `tar xvzf data.tar.gz` # the file data.tar.gz has all the stuff which you need for executing the software 
+    - `./usr/bin/tmux` # ./usr folder can be moved to other directory for convinience 
     - add `/home/<userName>/usr/bin/` to PATH, add to the end of `~/.bashrc` and source it. 
     - can directly use command tmux 
 
 * [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
  
  
+## 清华报销
+<a name="sec3"></a>

@@ -4,25 +4,30 @@
 
 ## content
 * [Server and Fileserver](#Servers-and-fileserver), read before using the servers. 
-* [Scheduling Tool](), read before running any code on the server.  
+* [Scheduling Tool](#Scheduling-Tool), read before running any code on the server.  
 * [Reimbursement in TBSI](#Reimbursement-in-TBSI), 清华报销
 
 ## Servers and fileserver
 
 * Keep in mind: 
-    - nerver use luvision account to run code on the server. Please use your own account and the queuing tool to submit jobs. Otherwise, you may terminate someones’ running jobs. 
-    - luvision account is the only superuser, and can only be used to install publicly used libraries, which may has different versions, such as cuda 7.0/8.0/…. Specify the version you want use in your local account `.bashrc` / `.theanorc` / … So that evryone’s setting will not affect others’. 
-
+    - **nerver** use luvision account to run code on the server. Please use **your own account and the queuing tool to submit jobs**. Otherwise, you may terminate someones’ running jobs. 
+    - **luvision account is the only superuser**, and can only be used to install publicly used libraries, which may has different versions, such as cuda 7.0/8.0/…. Specify the version you want use in your local account `.bashrc` / `.theanorc` / … So that evryone’s setting will not affect others’. 
+    - If you want to open an account or to add more information to this doc, please contact **Mengqi**.
 
 * Server: 
     - `ssh <userName>@svr1.local`  # or svr2
-        * if doesn't work --> use NAT IP address: `ssh <userName>@10.8.5.248`  # or 246 for sever 2 
-    - open accounts: since the servers share the home folder, please make sure the newly added users have the same userID and groupID on the servers. 
-    - the home folder is mounted from the fileserver, you can do everything in your own home folder. 
+        * if doesn't work --> use NAT IP address: `ssh <userName>@10.8.5.246`  # or 248 for sever 2 
+    - Using **WLAN IP** to **access from outside of TBSI**: `ssh <userName>@58.250.23.197` # or 195 for server 2
+    - open accounts: since the servers share the file system, please make sure the newly added users have the same userID and groupID on the servers. 
+        * If you want to use both the servers and your local machin in TBSI, in order to make your life easier please make sure that your userID and groupID on your local machine are consistent with the ones on the servers.
 
 * Fileserver: 
     - Because of the security issue of the curlftpfs / samba / … , we only enable NFS on the fileserver. Don't enable other mount methods. 
-    - Currently, only the home folder on the servers are mounted from the fileserver. So that your own home folder is large enough to do anything you want. The ownership of the files is related to the  
+    - The **/fileserver** folder is mounted from the fileserver, you can use that folder to share data between servers and your local machine. 
+    - You'd better make a symbolic link in your home directory 
+        * `mkdir /fileserver/<userName>`
+        * `ln -s /fileserver/<userName> /home/<userName>/fileserver`  # then you can access the fileserver using the address `~/fileserver`
+        * The fileserver is large enough to do what you want. **Do not** put too large files in your home directory except `~/fileserver`.
 
 * `apt-get` without sudo 
     - `apt-get download tmux` # get the .deb file 
@@ -33,8 +38,61 @@
     - can directly use command tmux 
 
 * [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
+* [fast way to setup working environment (vim+tmux+zsh)](https://github.com/mjiUST/vim_tmux_zsh)
+
+
+## Scheduling Tool
+* Keep in mind:
+    - nerver use luvision account to run code on the server. Please use your own account and this queuing tool to submit jobs. Otherwise, you may terminate some running jobs.
+    - Should you have any queries, please contact Mengqi.
+
+* About
+    - we use it to schedule our jobs on the jointly used computers.
+    - Jobs are scheduled according to a priority queue. The priority of a job is small if the amount of requested resources/computation time is large. Priority of a job increases with its waiting time. 
+    - For the latest version and professional usage, please check the author’s [github](https://github.com/alexanderrichard/queueing-tool).
+    - Check the samples in `<this_git_repo>/code/queuing_samples`
+* Check the **available** resources:
+    - `qinfo`:  
+![](figure/qinfo.png)
+* How to submit jobs:
+    - The queue uses bash scripts that are organized in blocks. A block is a part of the script that forms an independent job and can be specified as follows, in the file `qsub_example.sh`:
+![](figure/qsub1.png)
+![](figure/qsub2.png)
+    - `qsub_example.sh` to submit the jobs. Each task’s printout will be stored in the `./q.log` folder.
+* How to check the status of the queued jobs:
+    - `qstat`: check the current status of queued jobs on this machine. The output for the previous submitted job in the FIRST 5 seconds. **Note** that the anyName_gpuJob was in the `h: hold` status and there was no gpu occupied in the first 5 seconds. 
+![](figure/qstat1.png)
+    - the status in the last 5 seconds:
+![](figure/qstat2.png)
+* Check the log files
+    - the name of the log files follow the `jobname`+`id`:
+![](figure/log1.png)
+![](figure/log2.png)
+![](figure/log3.png)
+* Have fun!
  
  
 ## Reimbursement in TBSI
 
-<a name="sec3"></a>
+* 所有票据：
+    - 每个票／说明上都需要签字（直接签在发票正面，不可用铅笔）
+    - 大于一千的票：付款记录（最好有姓名／交易编号等信息）
+    - 将名字／身份证／银行帐号／分行信息写到一张贴纸上（一份就好）
+
+
+* 差旅相关：
+    - 机票：行程单 + 信天游机票验伪截图并打印
+    - 住宿：
+    - 打车票
+    - 其他票据（如携程邮寄发票的邮费差额发票）
+    - 说明：（并签字）
+        * 如机票不是闭环 或 没有住宿，必须写说明并签字
+        * 列明各项花销：机票价格 / 住宿价格 / 打车费用 / 其他费用
+
+
+* 实验器材／办公用具发票：
+    - 抬头：清华大学深圳研究生院
+    - 纳税人识别号：12440300455752807L
+    - 需有购物清单
+    - 电子发票打印亦可
+    - 外币购买：需列出转换成人民币的汇率和金额 

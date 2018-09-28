@@ -1,0 +1,13 @@
+---------------- start ----------------
+Sun Aug 13 2017 11:42:30
+max threads: 1
+max memory: 5000 MB
+time limit: 1 hours
+use gpu: false
+---------------------------------------
+hello world from python
+this block ONLY starts after all subtasks of the previous block: anyName_parallelJobs.
+----------------- end -----------------
+Sun Aug 13 2017 11:42:35
+elapsed time: 000:00:05
+---------------------------------------

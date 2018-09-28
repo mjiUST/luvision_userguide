@@ -1,0 +1,12 @@
+---------------- start ----------------
+Sun Aug 13 2017 11:46:34
+max threads: 1
+max memory: 10000 MB
+time limit: 24 hours
+gpu id(s): 1
+---------------------------------------
+this block ONLY starts after the previous block finishes. Remember to set gpu=true.
+----------------- end -----------------
+Sun Aug 13 2017 11:46:39
+elapsed time: 000:00:05
+---------------------------------------

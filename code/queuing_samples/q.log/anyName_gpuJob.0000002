@@ -1,0 +1,12 @@
+---------------- start ----------------
+Sun Aug 13 2017 11:42:35
+max threads: 1
+max memory: 10000 MB
+time limit: 2 hours
+gpu id(s): 0
+---------------------------------------
+this block ONLY starts after all subtasks of the previous block: anyName_parallelJobs.
+----------------- end -----------------
+Sun Aug 13 2017 11:42:40
+elapsed time: 000:00:05
+---------------------------------------

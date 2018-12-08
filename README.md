@@ -41,7 +41,7 @@
     - on your OWN ubuntu: `sudo apt-get install sshfs && sudo modprobe fuse && mkdir ~/remoteDir && sshfs <userName>@<IP>:/home/mengqi/ ~/remoteDir && cd ~/remoteDir`
     - on your OWN windows: [download](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe), and enter ssh information and the drive letter (say, G:) you would like Windows to use for your droplets file system
 * [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
-* [fast way to setup working environment (vim+tmux+zsh)](https://github.com/mjiUST/vim_tmux_zsh)
+* basic tutorial of vim & tmux & zsh: [fast way to setup working environment (vim+tmux+zsh)](https://github.com/mjiUST/vim_tmux_zsh)
 
 
 ## Scheduling Tool

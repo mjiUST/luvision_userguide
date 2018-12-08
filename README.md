@@ -5,7 +5,7 @@
 ## content
 * [Server and Fileserver](#Servers-and-fileserver), read before using the servers. 
 * [Scheduling Tool](#Scheduling-Tool), read before running any code on the server.  
-* [Reimbursement in TBSI](#Reimbursement-in-TBSI), 清华报销
+* [Reimbursement in TBSI](#Reimbursement-in-TBSI), 清华伯克利报销
 
 ## Servers and fileserver
 
@@ -107,8 +107,12 @@
 
 
 * 实验器材／办公用具发票：
-    - 抬头：清华大学深圳研究生院  (recheck with **Xiongfei**!!!)
-    - 纳税人识别号：12440300455752807L  (recheck with **Xiongfei**!!!)
+    - 抬头：清华-伯克利深圳学院筹备办公室  (recheck with **Xiongfei**!!!)
+    - 纳税人识别号：1244030035002941X2  (recheck with **Xiongfei**!!!)
+        * 地址：深圳市南山区学苑大道1001号南山智园
+        * 电话：86244273
+        * 开户行：建设银行深圳后海公馆支行
+        * 账号：44201018600052503993
     - 需有购物清单
     - 电子发票打印亦可
     - 外币购买：需列出转换成人民币的汇率和金额 

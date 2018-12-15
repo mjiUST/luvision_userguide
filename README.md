@@ -20,6 +20,24 @@
     - Using **WLAN IP** to **access from outside of TBSI**: `ssh <userName>@58.250.23.197` # or 195 for server 2
     - open accounts: since the servers share the file system, please make sure the newly added users have the same userID and groupID on the servers. 
         * If you want to use both the servers and your local machin in TBSI, in order to make your life easier please make sure that your userID and groupID on your local machine are consistent with the ones on the servers.
+    - Server arrangement
+
+| name  | IP         | users                                 |
+| ----- | ---------- | ------------------------------------- |
+| svr1  | 10.8.5.246 | haitian    & weifeng     &            |
+| svr2  | 10.8.5.248 | mengqi     & wangyong    &            |
+| ----- | ---------- | ------------------------------------- |
+| svr10 | 10.8.4.130 | lhanaf     & weifeng     &            |
+| svr11 | 10.8.4.129 | wangyong   & chengwei    &            |
+| svr12 | 10.8.4.132 | wangdan    & zhuyinheng  &            |
+| svr13 | 10.8.4.133 | mengqi     & tanyang     &            |
+| ----- | ---------- | ------------------------------------- | 
+| svr20 | 10.8.4.140 | chengwei   & jinzhi      & tanyang    |
+| svr21 | 10.8.4.141 | zhuyinheng & jinzhi      &            |
+| svr22 | 10.8.4.142 | haitian    & yaping      &            |
+| svr23 | 10.8.4.143 | lhanaf     & yaping      &            |
+
+
 
 * Fileserver: 
     - Because of the security issue of the curlftpfs / samba / … , we only enable NFS on the fileserver. Don't enable other mount methods. 

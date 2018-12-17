@@ -28,7 +28,7 @@
 | svr2  | 10.8.5.248 | mengqi     & wangyong    &            |
 | ----- | ---------- | ------------------------------------- |
 | svr10 | 10.8.4.130 | lhanaf     & weifeng     &            |
-| svr11 | 10.8.4.129 | wangyong   & chengwei    &            |
+| svr11 | 10.8.4.129 | wangyong   & chengwei    & wangdan    |
 | svr12 | 10.8.4.132 | wangdan    & zhuyinheng  &            |
 | svr13 | 10.8.4.133 | mengqi     & tanyang     &            |
 | ----- | ---------- | ------------------------------------- | 

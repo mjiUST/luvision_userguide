@@ -61,7 +61,7 @@
 * [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
 * basic tutorial of vim & tmux & zsh: [fast way to setup working environment (vim+tmux+zsh)](https://github.com/mjiUST/vim_tmux_zsh)
 * If you are still using Windows:
-    - use sshfs on your OWN windows: [download](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe), and enter ssh information and the drive letter (say, G:) you would like Windows to use for your droplets file system
+    - use sshfs on your OWN windows: [download](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe) (or download from the `<git_repo>/software` folder), and enter ssh information and the drive letter (say, G:) you would like Windows to use for your droplets file system
     - use [putty](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe) to ssh. use [pscp](https://the.earth.li/~sgtatham/putty/latest/w64/psftp.exe) to copy file between windows and Linux
     - or you'd better change to Linux.
 

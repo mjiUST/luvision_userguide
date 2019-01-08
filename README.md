@@ -107,6 +107,9 @@
 
 ![](figure/log3.png)
 
+* Delete your jobs:
+    - `qdel id1, id2, ...`
+
 * Have fun!
  
  

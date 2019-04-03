@@ -24,18 +24,18 @@
 
 | name  | IP         | users                                 |
 | ----- | ---------- | ------------------------------------- |
-| svr1  | 10.8.5.246 | haitian    & weifeng     &            |
+| svr1  | 10.8.5.246 | haitian    &      &            |
 | svr2  | 10.8.5.248 | mengqi     & wangyong    &            |
 | ----- | ---------- | ------------------------------------- |
-| svr10 | 10.8.4.130 | lhanaf     & weifeng     &            |
+| svr10 | 10.8.4.130 | lhanaf     &      &            |
 | svr11 | 10.8.4.129 | wangyong   & chengwei    & wangdan    |
 | svr12 | 10.8.4.132 | wangdan    & zhuyinheng  &            |
 | svr13 | 10.8.4.133 | mengqi     & tanyang     &            |
 | ----- | ---------- | ------------------------------------- | 
 | svr20 | 10.8.4.140 | chengwei   & jinzhi      & tanyang    |
 | svr21 | 10.8.4.141 | zhuyinheng & jinzhi      &            |
-| svr22 | 10.8.4.142 | haitian    & yaping      &            |
-| svr23 | 10.8.4.143 | lhanaf     & yaping      &            |
+| svr22 | 10.8.4.142 | haitian    & yaping      & maoshi     |
+| svr23 | 10.8.4.143 | lhanaf     & yaping      & zhengtian  |
 
 
 
@@ -46,6 +46,9 @@
         * `mkdir /fileserver/<userName>`
         * `ln -s /fileserver/<userName> /home/<userName>/fileserver`  # then you can access the fileserver using the address `~/fileserver`
         * The fileserver is large enough to do what you want. **Do not** put too large files in your home directory except `~/fileserver`.
+
+* local 10TB hard disk
+    - 每个机器（svr1x, svr2x）有独立的10TB硬盘/hdd10T。贼快，大文件100+MB/s，而且比文件服务器安全一点（但是也要自己做好备份），建议经常跑任务、经常有小文件吞吐的用户瓜分一下每台服务器local的硬盘，这样可以降低文件服务器负荷，同时所有人的访问速度都会上来。如果想用的话，只需要发给我一个svr的编号，我会创建目录`svrxx:/hdd10T/<your_user_name>`。跨机器访问也很简单，通过sshfs挂载到你想远程访问的机器上，比如：`mkdir ~/hdd && sshfs <userName>@<IP_of_the_server_with_the_local_hard_disk>:/hdd10T/<your_user_name>/ ~/hdd`
 
 * `apt-get` without sudo 
     - `apt-get download tmux` # get the .deb file 

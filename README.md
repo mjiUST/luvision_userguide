@@ -50,6 +50,11 @@
 * local 10TB hard disk
     - 每个机器（svr1x, svr2x）有独立的10TB硬盘/hdd10T。贼快，大文件100+MB/s，而且比文件服务器安全一点（但是也要自己做好备份），建议经常跑任务、经常有小文件吞吐的用户瓜分一下每台服务器local的硬盘，这样可以降低文件服务器负荷，同时所有人的访问速度都会上来。如果想用的话，只需要发给我一个svr的编号，我会创建目录`svrxx:/hdd10T/<your_user_name>`。跨机器访问也很简单，通过sshfs挂载到你想远程访问的机器上，比如：`mkdir ~/hdd && sshfs <userName>@<IP_of_the_server_with_the_local_hard_disk>:/hdd10T/<your_user_name>/ ~/hdd`
 
+* Copy files from other PCs, example: `dingjian` wants to copy a file\folder in `anke`'s folder
+    - Firstly, make sure `dingjian` has correct rights to read those `anke`'s files.
+    - option 1: `scp -r dingjian@svrxx_ip:/home/anke/source_path /home/dingjian/destination_path`
+    - option 2: `rsync -avh dingjian@svrxx_ip:/home/anke/source_path /home/dingjian/destination_path`
+
 * `apt-get` without sudo 
     - `apt-get download tmux` # get the .deb file 
     - `ar x tmux*.deb` # extract the contents 

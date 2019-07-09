@@ -14,7 +14,7 @@
     - **luvision account is the only superuser**, and can only be used to install publicly used libraries, which may has different versions, such as cuda 7.0/8.0/…. Specify the version you want use in your local account `.bashrc` / `.theanorc` / … So that evryone’s setting will not affect others’. 
     - If you want to open an account or to add more information to this doc, please contact **Mengqi**.
 
-* Server: 
+* Access servers: 
     - `ssh <userName>@svr1.local`  # or svr2
         * if doesn't work --> use NAT IP address: `ssh <userName>@10.8.5.246`  # or 248 for sever 2 
     - Using **WLAN IP** to **access from outside of TBSI**: `ssh <userName>@58.250.23.197` # or 195 for server 2
@@ -47,6 +47,21 @@
         * `ln -s /fileserver/<userName> /home/<userName>/fileserver`  # then you can access the fileserver using the address `~/fileserver`
         * The fileserver is large enough to do what you want. **Do not** put too large files in your home directory except `~/fileserver`.
 
+* mount remote folder (say, /home/mengqi/ on <IP>) 就像优盘一样，有了一个单独的文件夹，可以copy/paste/... 
+    - over sshfs on your local machine (say, ~/remoteDir)
+        * `sudo apt-get install sshfs && sudo modprobe fuse && mkdir ~/remoteDir && sshfs <userName>@<IP>:/home/mengqi/ ~/remoteDir && cd ~/remoteDir`
+    - use [filezilla](https://filezilla-project.org/)
+        * file -> site manager -> servertype (xxx ssh xxx) -> ip/username/passwd -> enter
+ 
+
+* If you are still using Windows:
+    - use sshfs on your OWN windows: [download](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe) (or download from the `<git_repo>/software` folder), and enter ssh information and the drive letter (say, G:) you would like Windows to use for your droplets file system
+    - use [putty](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe) to ssh. use [pscp](https://the.earth.li/~sgtatham/putty/latest/w64/psftp.exe) to copy file between windows and Linux
+    - or you'd better change to Linux.
+
+## Basic tutorials
+* [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
+* basic tutorial of vim & tmux & zsh: [fast way to setup working environment (vim+tmux+zsh)](https://github.com/mjiUST/vim_tmux_zsh)
 * `apt-get` without sudo 
     - `apt-get download tmux` # get the .deb file 
     - `ar x tmux*.deb` # extract the contents 
@@ -54,16 +69,6 @@
     - `./usr/bin/tmux` # ./usr folder can be moved to other directory for convinience 
     - add `/home/<userName>/usr/bin/` to PATH, add to the end of `~/.bashrc` and source it. 
     - can directly use command tmux 
-
-* mount remote folder (say, /home/mengqi/ on <IP>)  over sshfs on your local machine (say, ~/remoteDir)
-    - `sudo apt-get install sshfs && sudo modprobe fuse && mkdir ~/remoteDir && sshfs <userName>@<IP>:/home/mengqi/ ~/remoteDir && cd ~/remoteDir`
- 
-* [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
-* basic tutorial of vim & tmux & zsh: [fast way to setup working environment (vim+tmux+zsh)](https://github.com/mjiUST/vim_tmux_zsh)
-* If you are still using Windows:
-    - use sshfs on your OWN windows: [download](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe) (or download from the `<git_repo>/software` folder), and enter ssh information and the drive letter (say, G:) you would like Windows to use for your droplets file system
-    - use [putty](https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe) to ssh. use [pscp](https://the.earth.li/~sgtatham/putty/latest/w64/psftp.exe) to copy file between windows and Linux
-    - or you'd better change to Linux.
 
 
 ## Scheduling Tool

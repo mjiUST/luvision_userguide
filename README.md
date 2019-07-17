@@ -47,12 +47,15 @@
         * `ln -s /fileserver/<userName> /home/<userName>/fileserver`  # then you can access the fileserver using the address `~/fileserver`
         * The fileserver is large enough to do what you want. **Do not** put too large files in your home directory except `~/fileserver`.
 
-* mount remote folder (say, /home/mengqi/ on <IP>) 就像优盘一样，有了一个单独的文件夹，可以copy/paste/... 
+* mount remote folder (say, /home/mengqi/ on <IP>) 就像优盘一样，有了一个单独的文件夹，可以copy/paste/..., 
+    - choose ANY way you prefer:
+    - use GUI in Linux:
+        * open a folder -> find 'Connect to Server' at left -> Server Address, like: `ssh://<userName>@<IP>`
     - over sshfs on your local machine (say, ~/remoteDir)
         * `sudo apt-get install sshfs && sudo modprobe fuse && mkdir ~/remoteDir && sshfs <userName>@<IP>:/home/mengqi/ ~/remoteDir && cd ~/remoteDir`
     - use [filezilla](https://filezilla-project.org/)
         * file -> site manager -> servertype (xxx ssh xxx) -> ip/username/passwd -> enter
- 
+    
 
 * If you are still using Windows:
     - use sshfs on your OWN windows: [download](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe) (or download from the `<git_repo>/software` folder), and enter ssh information and the drive letter (say, G:) you would like Windows to use for your droplets file system

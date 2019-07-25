@@ -54,13 +54,12 @@
         * option 1: `scp -r dingjian@svrxx_ip:/home/anke/source_path /home/dingjian/destination_path`
         * option 2: `rsync -avh dingjian@svrxx_ip:/home/anke/source_path /home/dingjian/destination_path`
 
-* mount remote folder (say, /home/mengqi/ on <IP>) 就像优盘一样，有了一个单独的文件夹，可以copy/paste/..., 
-    - choose ANY way you prefer:
+* mount remote folder (say, /home/mengqi/ on <IP>) 就像**优盘**一样，有了一个单独的文件夹，可以copy/paste/..., 
+    - choose **ANY** way you prefer:
     - use GUI in Linux:
         * open a folder -> find 'Connect to Server' at left -> Server Address, like: `ssh://<userName>@<IP>`
     - over sshfs on your local machine (say, ~/remoteDir)
-        * `sudo apt-get install sshfs && sudo modprobe fuse && mkdir ~/remoteDir && sshfs <userName>@<IP>:/home/mengqi/ ~/remoteDir && cd ~/remoteDir`
-        - **Example**: want to mount the folder `svr23:/hdd10T` to `svr10:~/hdd`. Run these in svr10:
+        - **Example**: want to mount the folder `svr23:/hdd10T` to `svr10:~/hdd`. Run these in **svr10**:
             - ~~`sudo apt-get install sshfs && sudo modprobe fuse`~~ # only run when `sshfs` command does not exist.
             - `mkdir ~/hdd` # make a mount point: 
             - `sshfs <userName>@<IP_of_svr23>:/hdd10T ~/hdd` # mount use sshfs

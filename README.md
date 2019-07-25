@@ -24,28 +24,35 @@
 
 | name  | IP         | users                                 |
 | ----- | ---------- | ------------------------------------- |
-| svr1  | 10.8.5.246 | haitian    & weifeng     &            |
+| svr1  | 10.8.5.246 | haitian    &      &            |
 | svr2  | 10.8.5.248 | mengqi     & wangyong    &            |
 | ----- | ---------- | ------------------------------------- |
-| svr10 | 10.8.4.130 | lhanaf     & weifeng     &            |
+| svr10 | 10.8.4.130 | lhanaf     &      &            |
 | svr11 | 10.8.4.129 | wangyong   & chengwei    & wangdan    |
 | svr12 | 10.8.4.132 | wangdan    & zhuyinheng  &            |
 | svr13 | 10.8.4.133 | mengqi     & tanyang     &            |
 | ----- | ---------- | ------------------------------------- | 
 | svr20 | 10.8.4.140 | chengwei   & jinzhi      & tanyang    |
 | svr21 | 10.8.4.141 | zhuyinheng & jinzhi      &            |
-| svr22 | 10.8.4.142 | haitian    & yaping      &            |
-| svr23 | 10.8.4.143 | lhanaf     & yaping      &            |
+| svr22 | 10.8.4.142 | haitian    & yaping      & maoshi     |
+| svr23 | 10.8.4.143 | lhanaf     & yaping      & zhengtian  |
 
 
 
-* Fileserver: 
+* Fileserver and local hard disk: 
     - Because of the security issue of the curlftpfs / samba / … , we only enable NFS on the fileserver. Don't enable other mount methods. 
     - The **/fileserver** folder is mounted from the fileserver, you can use that folder to share data between servers and your local machine. 
     - You'd better make a symbolic link in your home directory 
         * `mkdir /fileserver/<userName>`
         * `ln -s /fileserver/<userName> /home/<userName>/fileserver`  # then you can access the fileserver using the address `~/fileserver`
         * The fileserver is large enough to do what you want. **Do not** put too large files in your home directory except `~/fileserver`.
+    - 如果想在其它服务器访问svr1/2的文件服务器，只需要用sshfs的方式(见下文)挂载到你本地(svrxx or other machine on earth)就可以，然后做个symbolic link，让程序看起来都是同一个地址，在不同服务器跑也不用改程序。当然，还是建议直接挂载svrxx（除了1/2号）上本地的10T硬盘跑程序，贼快、稳定、给力！
+    - local 10TB hard disk
+        * 每个机器（svr1x, svr2x）有独立的10TB硬盘/hdd10T。贼快，大文件100+MB/s，而且比文件服务器安全一点（但是也要自己做好备份），建议经常跑任务、经常有小文件吞吐的用户瓜分一下每台服务器local的硬盘，这样可以降低文件服务器负荷，同时所有人的访问速度都会上来。如果想用的话，只需要发给我一个svr的编号，我会创建目录`svrxx:/hdd10T/<your_user_name>`。跨机器访问也很简单，通过sshfs挂载到你想远程访问的机器上，比如：`mkdir ~/hdd && sshfs <userName>@<IP_of_the_server_with_the_local_hard_disk>:/hdd10T/<your_user_name>/ ~/hdd`
+    - Copy files from other PCs, example: `dingjian` wants to copy a file\folder in `anke`'s folder
+        * Firstly, make sure `dingjian` has correct rights to read those `anke`'s files.
+        * option 1: `scp -r dingjian@svrxx_ip:/home/anke/source_path /home/dingjian/destination_path`
+        * option 2: `rsync -avh dingjian@svrxx_ip:/home/anke/source_path /home/dingjian/destination_path`
 
 * mount remote folder (say, /home/mengqi/ on <IP>) 就像优盘一样，有了一个单独的文件夹，可以copy/paste/..., 
     - choose ANY way you prefer:

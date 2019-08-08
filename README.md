@@ -26,6 +26,7 @@
 | ----- | ---------- | ------------------------------------- |
 | svr1  | 10.8.5.246 | haitian    &      &            |
 | svr2  | 10.8.5.248 | mengqi     & wangyong    &            |
+| fsvr  | 10.8.5.233/206 | Nan                               |
 | ----- | ---------- | ------------------------------------- |
 | svr10 | 10.8.4.130 | lhanaf     &      &            |
 | svr11 | 10.8.4.129 | wangyong   & chengwei    & wangdan    |
@@ -43,7 +44,7 @@
     - Because of the security issue of the curlftpfs / samba / … , we only enable NFS on the fileserver. Don't enable other mount methods. 
     - The **/fileserver** folder is mounted from the fileserver, you can use that folder to share data between servers and your local machine. 
     - You'd better make a symbolic link in your home directory 
-        * `mkdir /fileserver/<userName>`
+        * ~~`mkdir /fileserver/<userName>`~~ 
         * `ln -s /fileserver/<userName> /home/<userName>/fileserver`  # then you can access the fileserver using the address `~/fileserver`
         * The fileserver is large enough to do what you want. **Do not** put too large files in your home directory except `~/fileserver`.
     - 如果想在其它服务器访问svr1/2的文件服务器，只需要用sshfs的方式(见下文)挂载到你本地(svrxx or other machine on earth)就可以，然后做个symbolic link，让程序看起来都是同一个地址，在不同服务器跑也不用改程序。当然，还是建议直接挂载svrxx（除了1/2号）上本地的10T硬盘跑程序，贼快、稳定、给力！

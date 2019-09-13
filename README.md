@@ -38,7 +38,7 @@
 | svr22 | 10.8.4.142 | haitian    & yaping      & maoshi     |
 | svr23 | 10.8.4.143 | lhanaf     & yaping      & zhengtian  |
 | ----- | ---------- | ------------------------------------- | 
-| svr40 | 10.8.5.225 |  &    &     |
+| svr40 | 10.8.5.225 | sebastian &    &     |
 | svr41 | 10.8.5.234 |  &    &     |
 | svr42 | 10.8.5.232 |  &    &     |
 
@@ -80,6 +80,16 @@
 ## Basic tutorials
 * [cuDNN without sudo (in your home folder)](https://github.com/mjiUST/driver_cuda_cudnn#cudnn-without-sudo-in-your-home-folder-2)
 * basic tutorial of vim & tmux & zsh: [fast way to setup working environment (vim+tmux+zsh)](https://github.com/mjiUST/vim_tmux_zsh)
+* conda:
+    - download and install [miniconda](https://docs.conda.io/en/latest/miniconda.html) locally
+        * `wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+        * `bash Miniconda3-latest-Linux-x86_64.sh`
+    - create your own conda environment
+        * `conda create --name <conda_name>`
+    - activate / deactivate the conda environment
+        * `conda activate <conda_name>`, `conda deactivate`
+    - install packages
+        * `conda install pytorch=1.0 torchvision=0.2.1 cudatoolkit=9.2 -c -y`  # example: pytorch with cuda
 * `apt-get` without sudo 
     - `apt-get download tmux` # get the .deb file 
     - `ar x tmux*.deb` # extract the contents 

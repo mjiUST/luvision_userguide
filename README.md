@@ -97,6 +97,8 @@
     - `./usr/bin/tmux` # ./usr folder can be moved to other directory for convinience 
     - add `/home/<userName>/usr/bin/` to PATH, add to the end of `~/.bashrc` and source it. 
     - can directly use command tmux 
+* frequently used command:
+    - `ps -o user= <PID>`  # check who submitted the job <PID>
 
 
 ## Scheduling Tool
